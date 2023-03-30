@@ -1,0 +1,25 @@
+<html lang="en">
+ <head>
+   <title>Flask Weather App</title>
+ </head>
+ <body>
+  <h1 style="color:blue">Flask Weather App</h1>
+  <form method="post" action="{{ url_for('get_weather') }}">
+    <input name="city" type="text" value="{{ request.form['city'] }}">
+    <button type="submit">Search</button>
+  </form> 
+  {% if data %}
+  <p>You have entered: {{ city }}. Country: {{ data['sys']['country'] }}</p>
+ 
+    <p>Temperature: {{ data['main']['temp'] }}°C</p>
+    <p>Temperature feeling: {{ data['main']['feels_like'] }}</p>
+    <p>Pressure: {{ data['main']['pressure'] }}</p>
+    <p>Humidity: {{ data['main']['humidity'] }}</p>
+    {% for i in data['weather'] %}
+       <p>Description:  {{ i['description'] }}</p>
+    {% endfor %}
+  {% endif %}
+  </body>
+</html>
+
+  
