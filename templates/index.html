@@ -12,7 +12,7 @@
   <p>You have entered: {{ city }}. Country: {{ data['sys']['country'] }}</p>
  
     <p>Temperature: {{ data['main']['temp'] }}°C</p>
-    <p>Temperature feeling: {{ data['main']['feels_like'] }}</p>
+    <p>Temperature feeling: {{ data['main']['feels_like'] }}°C</p>
     <p>Pressure: {{ data['main']['pressure'] }}</p>
     <p>Humidity: {{ data['main']['humidity'] }}</p>
     {% for i in data['weather'] %}
